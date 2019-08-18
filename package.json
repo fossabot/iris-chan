@@ -1,0 +1,20 @@
+{
+  "name": "iris-chan",
+  "version": "0.1.0",
+  "description": "Iris-chan est un neko bot pour l'événement de gCKn",
+  "private": true,
+  "scripts": {
+    "dev": "node ./test/main.js",
+    "public": "node ./shard/index.js"
+  },
+  "keywords": [
+    "neko-bot",
+    "iris-chan"
+  ],
+  "author": "shaynlink",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "discordjs/discord.js",
+    "klaw": "^3.0.0"
+  }
+}
