@@ -15,6 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "discordjs/discord.js",
-    "klaw": "^3.0.0"
+    "klaw": "^3.0.0",
+    "nekos.life": "^2.0.4"
   }
 }
