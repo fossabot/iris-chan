@@ -15,8 +15,8 @@
 *   shard: true;
 *   webhook: false;
 *
-* Iris-chan utilise les permission 3072
-* @exemple ['SEND_MESSAGES', 'VIEW_CHANNEL']
+* Iris-chan utilise les permission 19456
+* @exemple ['SEND_MESSAGES', 'VIEW_CHANNEL', 'EMBED_LINKS']
 *
 *
 * C'est parametres sont modifiable depuis les options du client.

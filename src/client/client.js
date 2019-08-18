@@ -49,7 +49,7 @@ class Iris_chan {
         this.commands.set(props.help.name, props);
         return false;
         } catch (e) {
-        console.log(e)
+        this.logger(e)
         return this.logger(false, `Impossible de charger la commande ${commandName}: ${e}`);
         }
     }

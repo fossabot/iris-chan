@@ -16,7 +16,7 @@ class Ping extends Iris_command {
 
   run(message) {
     message.channel.send('Ping !');
-    this.logger('log', 'otherlog')
+    this.client.logger('log', 'otherlog')
   };
 };
 
