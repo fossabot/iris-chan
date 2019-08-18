@@ -8,7 +8,7 @@ class Ping extends Iris_command {
   constructor(client) {
     super(client, {
       name: "ping",
-      description: "revoie ping",
+      description: "renvoie ping",
       usage: "Iping",
       nsfw: false,
     });
