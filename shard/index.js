@@ -1,3 +1,7 @@
+//utilisation du mode stricte pour être compatible avec les autres versions
+'use strict';
+
+//Importe les modules necessaires
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 
@@ -9,6 +13,11 @@ if (cluster.isMaster) {
   }
 
   const worker = cluster.fork();
+  /**
+   * 
+   * @param {number} [code] code de l'evenement exit
+   * @param {string} [signal] message de l'evenement exit
+   */
   worker.on('exit', (code, signal) => {
   if (signal) {
     console.log(`le worker est mort avec le signal: ${signal}`);
@@ -19,10 +28,21 @@ if (cluster.isMaster) {
   }
 });
 
+    /**
+   * 
+   * @param {Object} [worker]
+   * @param {number} [code] code de l'evenement exit
+   * @param {string} [signal] message de l'evenement exit
+   */
   cluster.on('exit', (worker, code, signal) => {
     console.log(`worker ${worker.process.pid} mort`);
   });
 
+  /**
+   * 
+   * @param {number} [address] adresse du serveur
+   * @warning Iris-chan n'emet pour l'instant pas de serveur donc l'evenement 'listening' n'est pas utilisé
+   */
   cluster.fork().on('listening', (address) => {
     console.log('listen '+ address);
   });
