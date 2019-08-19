@@ -25,7 +25,8 @@
 *    token: token,
 *    pathCommand: `${process.cwd()}${sep}commands`,
 *    prefix: 'I',
-*    debug: true
+*    debug: true,
+*
 *   }, {
 *    messageCacheMaxSize: -1,
 *    fetchAllMembers: true,
@@ -57,11 +58,12 @@ const client = new Iris_chan({
     pathCommand: `${process.cwd()}${sep}commands`,
     prefix: 'I',
     debug: false
+    //color:
 }, {
-    messageCacheMaxSize: -1,
-    fetchAllMembers: true,
-    disableEveryone: true,
-});
+        messageCacheMaxSize: -1,
+        fetchAllMembers: true,
+        disableEveryone: true,
+    });
 
 //connection à l'api de discord et start ready & debug event
 client.login();
@@ -69,7 +71,7 @@ client.login();
 client.loading();
 
 //En cas de rejet d'une promesse
-process.on('unhandledRejection',  async err => {
+process.on('unhandledRejection', async err => {
     errorResolver(`Rejet d'un promesse: ${err}`, 'exitWithType', 1);
 });
 // En cas d'erreur inattendu

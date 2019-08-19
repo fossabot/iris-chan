@@ -1,30 +1,34 @@
-//utilisation du mode stricte pour être compatible avec les autres versions
-'use strict';
+const cluster = require('cluster');
+const numCPUs = require('os').cpus().length;
 
-//importe les modules necessaire
-const { ShardingManager } = require('discord.js');
-const { sep } = require('path');
-const { logger } = require('./../src/Utile/Utile');
+if (cluster.isMaster) {
+  console.log(`Master ${process.pid} en cours`);
 
-/**
- * @typedef {ConstructorParameters} ShardingManager
- * @param {string, Object} ShardingManager
- */
-const sharder = new ShardingManager(`${process.cwd()}${sep}main.js`, {
-    totalShards: 'auto',
-    shardList: 'auto',
-    mode: 'process',
-    respawn: true,
-    token: require(`${process.cwd()}${sep}settings.json`).token
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
+
+  const worker = cluster.fork();
+  worker.on('exit', (code, signal) => {
+  if (signal) {
+    console.log(`le worker est mort avec le signal: ${signal}`);
+  } else if (code !== 0) {
+    console.log(`le woker à quitté avec l'erreur: ${code}`);
+  } else {
+    console.log('worker success!');
+  }
 });
 
-sharder.spawn(this.totalShards, 25000, false);
+  cluster.on('exit', (worker, code, signal) => {
+    console.log(`worker ${worker.process.pid} mort`);
+  });
 
-sharder.on('launch', shard => {
-  logger(`${shard.id} est lancée.`)
-});
-
-setTimeout(() => {
-    logger("redémarrage..")
-    sharder.broadcastEval("process.exit()");
-}, 21600000); //6h
+  cluster.fork().on('listening', (address) => {
+    console.log('listen '+ address);
+  });
+  cluster.fork().on('online', () => {
+    require('./../main');
+  });
+} else {
+  console.log(`Worker ${process.pid} started`);
+}

@@ -27,10 +27,10 @@ const client = new Iris_chan({
     prefix: 'I',
     debug: true
 }, {
-    messageCacheMaxSize: -1,
-    fetchAllMembers: true,
-    disableEveryone: true,
-});
+        messageCacheMaxSize: -1,
+        fetchAllMembers: true,
+        disableEveryone: true,
+    });
 
 client.login();
 client.loading();

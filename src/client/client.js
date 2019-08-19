@@ -3,7 +3,7 @@
 
 //Importé les modules nécessaire
 const { Client, Collection } = require('discord.js');
-const { errorResolver, logger } = require('../Utile/Utile');
+const { errorResolver, logger, colorResolver } = require('../Utile/Utile');
 const { sep, parse } = require('path');
 const klaw = require('klaw');
 
@@ -25,13 +25,14 @@ class Iris_chan {
         this.client = new Client(client);
         this.commands = new Collection();
         this.aliases = new Collection();
-        const {token = '', pathCommand = `${process.cwd()}${sep}commands`, prefix = '!', debug = false} = options
+        const { token = '', pathCommand = `${process.cwd()}${sep}commands`, prefix = '!', debug = false, color = "#FF33BB" } = options
         this.token = token;
         this.pathCommand = pathCommand;
         this.prefix = prefix;
         this.settings = require(`${process.cwd()}${sep}settings.json`);
         this.debug = debug;
         this.logger = logger;
+        this.color = color;
     };
     /**
      * 
@@ -40,17 +41,17 @@ class Iris_chan {
      */
     loadCommand(commandPath, commandName) {
         try {
-        const props = new (require(`${commandPath}${sep}${commandName}`))(this);
-        this.logger(`Chargement de la commande: ${props.help.name}`);
-        props.help.location = commandPath;
-        if (props.init) {
-            props.init(this);
-        }
-        this.commands.set(props.help.name, props);
-        return false;
+            const props = new (require(`${commandPath}${sep}${commandName}`))(this);
+            this.logger(`Chargement de la commande: ${props.help.name}`);
+            props.help.location = commandPath;
+            if (props.init) {
+                props.init(this);
+            }
+            this.commands.set(props.help.name, props);
+            return false;
         } catch (e) {
-        this.logger(e)
-        return this.logger(false, `Impossible de charger la commande ${commandName}: ${e}`);
+            this.logger(e)
+            return this.logger(false, `Impossible de charger la commande ${commandName}: ${e}`);
         }
     }
     /**
@@ -61,7 +62,7 @@ class Iris_chan {
         klaw(params).on("data", item => {
             const cmdFile = parse(item.path);
             if (!cmdFile.ext || cmdFile.ext !== ".js") return;
-            const response = (this.loadCommand(cmdFile.dir,`${cmdFile.name}${cmdFile.ext}`));
+            const response = (this.loadCommand(cmdFile.dir, `${cmdFile.name}${cmdFile.ext}`));
             if (response) this.logger(false, response);
         });
         this.client.on('message', message => {
@@ -92,6 +93,9 @@ class Iris_chan {
                 webhook.send(`Iris-chan est prêt`)
             });
         });
+    }
+    colorEmbed(data) {
+        return colorResolver(data);
     }
 };
 
