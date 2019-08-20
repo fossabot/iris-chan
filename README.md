@@ -2,6 +2,9 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/Shaynlink/iris-chan/total) ![Discord](https://img.shields.io/discord/612430086624247828?label=Iris-chan%20discord) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/Shaynlink/iris-chan/master?label=Iris-chan%20version)
 
 Iris-chan est un lewd bot pour un événement de gCKn.
+- [serveur support](https://discord.gg/rnPQtGT)
+- [doc github](https://shaynlink.github.io/iris-chan/)
+- [issue](https://github.com/Shaynlink/iris-chan/issues)
 
 ## Installation
 
