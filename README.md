@@ -1,4 +1,5 @@
 # Iris-chan
+![GitHub All Releases](https://img.shields.io/github/downloads/Shaynlink/iris-chan/total) ![Discord](https://img.shields.io/discord/612430086624247828?label=Iris-chan%20discord) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/Shaynlink/iris-chan/master?label=Iris-chan%20version)
 
 Iris-chan est un lewd bot pour un événement de gCKn.
 
@@ -42,6 +43,12 @@ Iris_chan({
 });
 ```
 modification plus importante dans [Client](https://github.com/Shaynlink/iris-chan/blob/master/src/client/client.js);
+
+### modifier les événement
+- [message](https://github.com/Shaynlink/iris-chan/blob/master/src/client/client.js#L68)
+- [ready](https://github.com/Shaynlink/iris-chan/blob/master/src/client/client.js#L89)
+- [message du webhook](https://github.com/Shaynlink/iris-chan/blob/master/src/client/client.js#L91)
+
 ## Contribution
 developpeur: Shaynlink
 
@@ -50,4 +57,5 @@ credit:
 - [nodeJS](https://nodejs.org/en/)
 - [nekos life](https://nekos.life/)
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)

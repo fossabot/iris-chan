@@ -60,6 +60,11 @@ class Help extends Iris_command {
                         value: 'https://github.com/Shaynlink/iris-chan',
                         inline: false,
                     },
+                    {
+                        name: 'Doc github',
+                        value: ' https://shaynlink.github.io/iris-chan/',
+                        inline: false
+                    }
                 ],
                 timestamp: new Date(),
             }

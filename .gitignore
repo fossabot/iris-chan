@@ -64,3 +64,6 @@ typings/
 # deploy
 deploy/
 settings.json
+
+# test du bot
+test/
