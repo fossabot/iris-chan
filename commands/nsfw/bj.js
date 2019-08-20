@@ -18,7 +18,7 @@ class Bj extends Iris_command {
   }
 
   async run(message, args) {
-    var nekos = await Object.assign(neko.nsfw.bj());
+    var nekos = await Object.assign(neko.nsfw.bJ());
     message.channel.send({
       embed: {
         color: this.client.colorEmbed(this.client.color),

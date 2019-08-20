@@ -9,9 +9,9 @@ const neko = new client();
 class CumArts extends Iris_command {
   constructor(client) {
     super(client, {
-      name: "CumArts",
-      description: "image 'CumArts'",
-      usage: "ICumArts",
+      name: "cumarts",
+      description: "image 'cumarts'",
+      usage: "Icumarts",
       nsfw: true,
       category: "nsfw"
     });

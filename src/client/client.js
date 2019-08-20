@@ -88,6 +88,7 @@ class Iris_chan {
         if (this.debug) this.client.on('debug', console.log);
         this.client.on('ready', () => {
             this.logger('Iris-chan est ready');
+            this.client.user.setActivity('Ihelp', { type: 'PLAYING' });
             this.client.fetchWebhook(this.settings.idWebhook, this.settings.tokenWebhook).then(webhook => {
                 this.logger(`Obtained webhook with name: ${webhook.name}`);
                 webhook.send(`Iris-chan est prêt`)
