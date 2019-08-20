@@ -25,8 +25,8 @@ use yarn
 yarn
 ```
 ## Utilisation
-prefix: I
-commande help: Ihelp
+- prefix: I
+- commande help: Ihelp
 ajouter un fichier [settings.json](https://github.com/Shaynlink/iris-chan/blob/master/settings.exemple.json )
 ```json
 {
