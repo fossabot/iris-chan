@@ -56,7 +56,7 @@ const { errorResolver } = require('./src/Utile/Utile');
 const client = new Iris_chan({
     token: token,
     pathCommand: `${process.cwd()}${sep}commands`,
-    prefix: 'I',
+    prefix: '*',
     debug: false
     //color:
 }, {

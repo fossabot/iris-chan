@@ -6,28 +6,21 @@ const { Iris_command } = require("../../src");
 const client = require('nekos.life');
 const neko = new client();
 
-class Smug extends Iris_command {
+class Futunari extends Iris_command {
   constructor(client) {
     super(client, {
-      name: "smug",
-      description: "image 'fier de sois'",
-      usage: "Ismug",
-      nsfw: false,
-      category: "sfw"
+      name: "futunari",
+      description: "image 'futunari'",
+      usage: "Ifutunari",
+      nsfw: true,
+      category: "nsfw"
     });
   }
 
   async run(message, args) {
-    var nekos = await Object.assign(neko.sfw.smug());
-    let title = true;
-    var user = message.mentions.users.first();
-    if (user) {
-      var member = message.guild.member(user);
-      if (member) title = false;
-    }
+    var nekos = await Object.assign(neko.nsfw.futanari());
     message.channel.send({
       embed: {
-        title: title ? `${message.author.username} est fier de lui` : `${message.author.username} est fier de ${user.username}`,
         color: this.client.colorEmbed(this.client.color),
         description: `${this.help.name} demandé par: ${message.author}`,
         image: {
@@ -38,4 +31,4 @@ class Smug extends Iris_command {
   };
 };
 
-module.exports = Smug;
+module.exports = Futunari;

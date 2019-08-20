@@ -11,12 +11,12 @@ class Ping extends Iris_command {
       description: "renvoie ping",
       usage: "Iping",
       nsfw: false,
+      category: "bot"
     });
   }
 
   run(message) {
-    message.channel.send('Ping !');
-    this.client.logger('log', 'otherlog')
+    message.channel.send('Pong !');
   };
 };
 

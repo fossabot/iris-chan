@@ -6,19 +6,19 @@ const { Iris_command } = require("../../src");
 const client = require('nekos.life');
 const neko = new client();
 
-class Smug extends Iris_command {
+class Kiss extends Iris_command {
   constructor(client) {
     super(client, {
-      name: "smug",
-      description: "image 'fier de sois'",
-      usage: "Ismug",
+      name: "kiss",
+      description: "image 'kiss'",
+      usage: "Ikiss",
       nsfw: false,
       category: "sfw"
     });
   }
 
   async run(message, args) {
-    var nekos = await Object.assign(neko.sfw.smug());
+    var nekos = await Object.assign(neko.sfw.kiss());
     let title = true;
     var user = message.mentions.users.first();
     if (user) {
@@ -27,7 +27,7 @@ class Smug extends Iris_command {
     }
     message.channel.send({
       embed: {
-        title: title ? `${message.author.username} est fier de lui` : `${message.author.username} est fier de ${user.username}`,
+        title: title ? `${this.client.username} embrasse ${message.author.username}` : `${message.author.username} embrasse ${user.username}`,
         color: this.client.colorEmbed(this.client.color),
         description: `${this.help.name} demandé par: ${message.author}`,
         image: {
@@ -38,4 +38,4 @@ class Smug extends Iris_command {
   };
 };
 
-module.exports = Smug;
+module.exports = Kiss;
