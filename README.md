@@ -1,5 +1,6 @@
 # Iris-chan
 ![GitHub All Releases](https://img.shields.io/github/downloads/Shaynlink/iris-chan/total) ![Discord](https://img.shields.io/discord/612430086624247828?label=Iris-chan%20discord) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/Shaynlink/iris-chan/master?label=Iris-chan%20version)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FShaynlink%2Firis-chan.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FShaynlink%2Firis-chan?ref=badge_shield)
 
 Iris-chan est un lewd bot pour un événement de gCKn.
 - [serveur support](https://discord.gg/rnPQtGT)
@@ -64,3 +65,5 @@ credit:
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FShaynlink%2Firis-chan.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FShaynlink%2Firis-chan?ref=badge_large)
